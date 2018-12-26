@@ -12,5 +12,7 @@ import java.util.List;
  */
 
 public interface UserService {
-    List<User> queryAllUser(int userId);
+/*    List<User> queryAllUser(int userId);
+
+    void saveOrUpdate(List<User> list);*/
 }

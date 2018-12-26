@@ -11,3 +11,5 @@ spring:
     database: 0
 server:
   port: 9999
+mybatis:
+  mapper-locations: classpath:/mapper/UserMapper.xml

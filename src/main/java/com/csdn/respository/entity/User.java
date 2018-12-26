@@ -4,23 +4,32 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author: ittzg
  * @CreateDate: 2018/12/8 23:31
  * @Description:
  */
-@Table(name = "user")
-@Entity
+/*@Table(name = "user")
+@Entity*/
 public class User implements Serializable{
-    @Id
+   /* @Id
     @Column(name = "id")
-    @GeneratedValue
+    @GeneratedValue*/
     private int id;
-    @Column(name = "name")
+  /*  @Column(name = "name")*/
     private String name;
-    @Column(name = "age")
+//    @Column(name = "age")
     private int age;
+    private Date modifyTime;
+
+    public User(int id, String name, int age, Date modifyTime) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.modifyTime = modifyTime;
+    }
 
     public int getId() {
         return id;
@@ -46,12 +55,21 @@ public class User implements Serializable{
         this.age = age;
     }
 
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", modifyTime=" + modifyTime +
                 '}';
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csdn.respository.UserMapper">
+    <insert id="saveOrUpdate">
+        replace into USER (id,name,age,modify_time,count)
+        VALUES
+        <foreach collection="list" item="list" separator=",">
+            (#{list.id},#{list.name},#{list.age},NOW(),1)
+        </foreach>
+    </insert>
+
+    <select id="fimdAll">
+          select id,name,age,modify_time modifyTime from USER
+    </select>
+</mapper>

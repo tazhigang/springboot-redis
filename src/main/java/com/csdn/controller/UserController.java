@@ -20,10 +20,11 @@ public class UserController {
     private UserService userService;
     @RequestMapping(value = "findAll")
     public List<User> findAll(){
-        long begin = System.currentTimeMillis();
+/*        long begin = System.currentTimeMillis();
         List<User> users = userService.queryAllUser(1);
         long end = System.currentTimeMillis();
         System.out.println("查询时间"+(end-begin));
-        return users;
+        return users;*/
+        return null;
     }
 }
